@@ -35,8 +35,10 @@ public class PlayerBehaviour : MonoBehaviour
         if (state == PlayerState.OnWall) {
             //rb.linearVelocity = new Vector2(0f, 0f); // Stick player to the wall
             if (currentWall != null && currentWall.wallType == WallType.Checkpoint) {
+                rb.gravityScale = 0f;
                 rb.linearVelocity = Vector2.zero; // Stop all movement on checkpoint walls
             } else {
+                rb.gravityScale = 1f;
                 rb.linearVelocity = new Vector2(0f, 0f);
             }
         }
@@ -105,6 +107,7 @@ public class PlayerBehaviour : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Ground") || col.gameObject.CompareTag("Wall")) {
             state = PlayerState.Airborne;
+            rb.gravityScale = 1f;
             currentWall = null;
         }
     }
