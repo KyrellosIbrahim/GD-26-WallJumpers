@@ -106,10 +106,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4adf4546ab9f2400bafdc21f00e00daa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerBehaviour
-  isGrounded: 0
+  state: 1
   isFacingRight: 0
-  isMidAir: 0
-  isTouchingWall: 0
+  hasAirJump: 0
+  jumpForce: 5
+  speed: 3
+  wallJumpForce: 3
 --- !u!50 &3952907066154657313
 Rigidbody2D:
   serializedVersion: 5
@@ -136,7 +138,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &2797232733779503820
 CircleCollider2D:
   m_ObjectHideFlags: 0

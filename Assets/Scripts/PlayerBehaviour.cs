@@ -9,9 +9,9 @@ public class PlayerBehaviour : MonoBehaviour
     public PlayerState state = PlayerState.OnWall;
     public bool isFacingRight = true;
     public bool hasAirJump = false;
-    public float jumpForce = 5f;
-    public float speed = 3f;
-    public float wallJumpForce = 3f;
+    private float jumpForce = 7f;
+    private float speed = 5f;
+    private float wallJumpForce = 7f;
     private Rigidbody2D rb;
     void Start()
     {
@@ -23,6 +23,13 @@ public class PlayerBehaviour : MonoBehaviour
     {
         HandleJump();
         HandleAutoWalk();
+    }
+
+    void FixedUpdate()
+    {
+        if (state == PlayerState.OnWall) {
+            rb.linearVelocity = new Vector2(0f, 0f); // Stick player to the wall
+        }
     }
 
     public void HandleJump() {
@@ -52,5 +59,19 @@ public class PlayerBehaviour : MonoBehaviour
             float xDirection = isFacingRight ? speed : -speed;
             rb.linearVelocity = new Vector2(xDirection, rb.linearVelocity.y);
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision) {
+        if (collision.gameObject.CompareTag("Ground")) {
+            state = PlayerState.Grounded;
+        } else if (collision.gameObject.CompareTag("Wall")) {
+            state = PlayerState.OnWall;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D col)
+    {
+        if (col.gameObject.CompareTag("Ground") || col.gameObject.CompareTag("Wall"))
+            state = PlayerState.Airborne;
     }
 }
