@@ -390,7 +390,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4564224945293287490, guid: 21b328f22d393491ca1e7c5a86cbc755, type: 3}
       propertyPath: m_Name
-      value: Wall_Normal_Short Variant
+      value: Wall_Normal_Short2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
