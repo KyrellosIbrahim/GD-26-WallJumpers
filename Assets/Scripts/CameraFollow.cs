@@ -5,9 +5,9 @@ public class CameraFollow : MonoBehaviour
     public Transform player;
     public float horizontalSmoothSpeed = 5f;
     public float verticalSmoothSpeed = 5f;
-    public GameManager gameManager; // hook up your lose condition here
+    public GameManager gameManager;
 
-    private float highestY;         // the highest Y the camera has committed to
+    private float highestY;
     private Camera cam;
 
     void Start()
