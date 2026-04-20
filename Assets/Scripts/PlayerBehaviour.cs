@@ -114,9 +114,27 @@ public class PlayerBehaviour : MonoBehaviour
 
     public void TriggerWallJump()
     {
-        isFacingRight = !isFacingRight;
-        float xDir = isFacingRight ? wallJumpForce : -wallJumpForce;
-        rb.linearVelocity = new Vector2(xDir, jumpForce);
+        float direction = 1f;
+
+        if (currentWall != null)
+        {
+            // Compare positions to determine which side the wall is on
+            if (transform.position.x < currentWall.transform.position.x)
+            {
+                // wall is on the right → jump left
+                direction = -1f;
+                isFacingRight = false;
+            }
+            else
+            {
+                // wall is on the left → jump right
+                direction = 1f;
+                isFacingRight = true;
+            }
+        }
+
+        rb.linearVelocity = new Vector2(direction * wallJumpForce, jumpForce);
+
         hasAirJump = true;
         isHoldingJump = true;
         jumpHoldTimer = 0f;
