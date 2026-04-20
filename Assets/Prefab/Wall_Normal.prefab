@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6773809244167476527}
   - component: {fileID: 127182787387973654}
   - component: {fileID: 5632432928875391048}
+  - component: {fileID: 518935007694844321}
   m_Layer: 0
   m_Name: Wall_Normal
   m_TagString: Wall
@@ -138,3 +139,16 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &518935007694844321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6301385194304809012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 851022190798f4abfb4e4d155758901b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WallBehaviour
+  wallType: 0
