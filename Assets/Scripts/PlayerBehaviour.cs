@@ -6,6 +6,7 @@ public enum PlayerState { Grounded, OnWall, Airborne }
 
 public class PlayerBehaviour : MonoBehaviour
 {
+    public CameraFollow cam;
     public PlayerState state = PlayerState.OnWall;
     public bool isFacingRight = true;
     public bool hasAirJump = false;
@@ -18,6 +19,9 @@ public class PlayerBehaviour : MonoBehaviour
     private float jumpHoldTimer = 0f;
     private Rigidbody2D rb;
     private WallBehaviour currentWall = null;
+    public AudioSource audioSource;
+    public AudioClip jumpSound;
+    public AudioClip boingSound;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -33,10 +37,10 @@ public class PlayerBehaviour : MonoBehaviour
     void FixedUpdate()
     {
         if (state == PlayerState.OnWall) {
-            //rb.linearVelocity = new Vector2(0f, 0f); // Stick player to the wall
             if (currentWall != null && currentWall.wallType == WallType.Checkpoint) {
-                rb.gravityScale = 0f;
-                rb.linearVelocity = Vector2.zero; // Stop all movement on checkpoint walls
+                rb.AddForce(-Physics2D.gravity * rb.mass);
+                rb.gravityScale = 1f;
+                rb.linearVelocity = new Vector2(0f, 0f);
             } else {
                 rb.gravityScale = 1f;
                 rb.linearVelocity = new Vector2(0f, 0f);
@@ -68,8 +72,10 @@ public class PlayerBehaviour : MonoBehaviour
             isHoldingJump = true;
             jumpHoldTimer = 0f;
             state = PlayerState.Airborne;
+            audioSource.PlayOneShot(jumpSound);
         } else if (state == PlayerState.OnWall) {
             TriggerWallJump();
+            audioSource.PlayOneShot(jumpSound);
         } else if (state == PlayerState.Airborne && hasAirJump) {
             isFacingRight = !isFacingRight;
             float xDirection = isFacingRight ? speed : -speed;
@@ -77,6 +83,7 @@ public class PlayerBehaviour : MonoBehaviour
             isHoldingJump = true;
             jumpHoldTimer = 0f;
             hasAirJump = false;
+            audioSource.PlayOneShot(jumpSound);
         }
     }
 
@@ -96,7 +103,12 @@ public class PlayerBehaviour : MonoBehaviour
             currentWall = wall;
             if (wall != null && wall.wallType == WallType.Bouncy) {
                 TriggerWallJump();
+                audioSource.PlayOneShot(boingSound);
                 return;
+            }
+
+            if (wall != null && wall.wallType == WallType.Checkpoint) {
+                cam.PurgeBelowCamera();
             }
             state = PlayerState.OnWall;
             isHoldingJump = false;
@@ -114,8 +126,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     public void TriggerWallJump()
     {
-        float direction = 1f;
-
+        float direction = 1f;        
         if (currentWall != null)
         {
             // Compare positions to determine which side the wall is on

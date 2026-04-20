@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1116250255559897582}
   - component: {fileID: 3218433323196395492}
   - component: {fileID: 1522629549154403285}
+  - component: {fileID: 1169001013802276339}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Ground
@@ -138,3 +139,15 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1169001013802276339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8242891318053248187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c215d4f6c9aab4aef961c186b9485174, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Destroyable

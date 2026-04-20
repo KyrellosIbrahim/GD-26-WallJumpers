@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 127182787387973654}
   - component: {fileID: 5632432928875391048}
   - component: {fileID: 518935007694844321}
+  - component: {fileID: 1670375058883235528}
   m_Layer: 0
   m_Name: Wall_Normal
   m_TagString: Wall
@@ -152,3 +153,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WallBehaviour
   wallType: 0
+--- !u!114 &1670375058883235528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6301385194304809012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c215d4f6c9aab4aef961c186b9485174, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Destroyable

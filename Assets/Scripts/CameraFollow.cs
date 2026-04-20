@@ -45,4 +45,17 @@ public class CameraFollow : MonoBehaviour
             gameManager.TriggerLose();
         }
     }
+    public void PurgeBelowCamera()
+    {
+        float camBottomEdge = transform.position.y - cam.orthographicSize;
+
+        for (int i = DestroyableRegistry.items.Count - 1; i >= 0; i--)
+        {
+            GameObject obj = DestroyableRegistry.items[i];
+            if (obj != null && obj.transform.position.y < camBottomEdge)
+            {
+                Destroy(obj);
+            }
+        }
+    }
 }
