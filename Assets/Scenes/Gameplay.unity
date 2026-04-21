@@ -629,7 +629,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ced37fabe33f42e2abc2e4118781683, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WinManager
-  winPanel: {fileID: 760573194}
+  winPanel: {fileID: 1223670047}
 --- !u!4 &528722558
 Transform:
   m_ObjectHideFlags: 0
@@ -1878,7 +1878,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1223670048
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3569,6 +3569,10 @@ PrefabInstance:
     - target: {fileID: 9047874631424646305, guid: 6aef2478d1f034a5c8239e7aafab2331, type: 3}
       propertyPath: m_Name
       value: FinishLine
+      objectReference: {fileID: 0}
+    - target: {fileID: 9047874631424646305, guid: 6aef2478d1f034a5c8239e7aafab2331, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
