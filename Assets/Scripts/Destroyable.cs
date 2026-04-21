@@ -2,15 +2,13 @@ using UnityEngine;
 
 public class Destroyable : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void OnEnable()
     {
-        
+        DestroyableRegistry.Register(gameObject);
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnDestroy()
     {
-        
+        DestroyableRegistry.Unregister(gameObject);
     }
 }

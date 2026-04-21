@@ -22,6 +22,7 @@ public class PlayerBehaviour : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip jumpSound;
     public AudioClip boingSound;
+    public WinManager winManager;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -104,6 +105,12 @@ public class PlayerBehaviour : MonoBehaviour
             if (wall != null && wall.wallType == WallType.Bouncy) {
                 TriggerWallJump();
                 audioSource.PlayOneShot(boingSound);
+                return;
+            }
+
+            if (wall != null && wall.wallType == WallType.Finish)
+            {
+                winManager.TriggerWin();
                 return;
             }
 

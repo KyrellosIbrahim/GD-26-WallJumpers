@@ -9,6 +9,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 127182787387973654, guid: ea1cd81deff0b4b0a97157f7bf8d8e9d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+    - target: {fileID: 127182787387973654, guid: ea1cd81deff0b4b0a97157f7bf8d8e9d, type: 3}
       propertyPath: m_Color.b
       value: 0.1254902
       objectReference: {fileID: 0}
@@ -20,13 +24,37 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.854902
       objectReference: {fileID: 0}
+    - target: {fileID: 127182787387973654, guid: ea1cd81deff0b4b0a97157f7bf8d8e9d, type: 3}
+      propertyPath: m_DrawMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 127182787387973654, guid: ea1cd81deff0b4b0a97157f7bf8d8e9d, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 518935007694844321, guid: ea1cd81deff0b4b0a97157f7bf8d8e9d, type: 3}
       propertyPath: wallType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632432928875391048, guid: ea1cd81deff0b4b0a97157f7bf8d8e9d, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632432928875391048, guid: ea1cd81deff0b4b0a97157f7bf8d8e9d, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6301385194304809012, guid: ea1cd81deff0b4b0a97157f7bf8d8e9d, type: 3}
       propertyPath: m_Name
       value: Wall_Checkpoint Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 6773809244167476527, guid: ea1cd81deff0b4b0a97157f7bf8d8e9d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6773809244167476527, guid: ea1cd81deff0b4b0a97157f7bf8d8e9d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.9103994
       objectReference: {fileID: 0}
     - target: {fileID: 6773809244167476527, guid: ea1cd81deff0b4b0a97157f7bf8d8e9d, type: 3}
       propertyPath: m_LocalPosition.x

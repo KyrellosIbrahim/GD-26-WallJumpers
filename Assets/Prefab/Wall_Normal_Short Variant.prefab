@@ -8,6 +8,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 127182787387973654, guid: ea1cd81deff0b4b0a97157f7bf8d8e9d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+    - target: {fileID: 127182787387973654, guid: ea1cd81deff0b4b0a97157f7bf8d8e9d, type: 3}
+      propertyPath: m_DrawMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 127182787387973654, guid: ea1cd81deff0b4b0a97157f7bf8d8e9d, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 5632432928875391048, guid: ea1cd81deff0b4b0a97157f7bf8d8e9d, type: 3}
+      propertyPath: m_SpriteTilingProperty.drawMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632432928875391048, guid: ea1cd81deff0b4b0a97157f7bf8d8e9d, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632432928875391048, guid: ea1cd81deff0b4b0a97157f7bf8d8e9d, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6301385194304809012, guid: ea1cd81deff0b4b0a97157f7bf8d8e9d, type: 3}
       propertyPath: m_Name
       value: Wall_Normal_Short Variant

@@ -1,7 +1,7 @@
 using UnityEngine;
 
 
-public enum WallType { Normal, Checkpoint, Bouncy }
+public enum WallType { Normal, Checkpoint, Bouncy, Finish }
 
 public class WallBehaviour : MonoBehaviour
 {
